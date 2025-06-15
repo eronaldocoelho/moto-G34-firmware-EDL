@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <!-- Essential Partitions to exit EDL and enter Bootloader (Based on files you have in your ROM folder) -->
+    <!--
+        Heurística: Selecionando a entrada da varredura que parece corresponder a cada nome de arquivo
+        E verificando se o arquivo .img/.bin existe na sua pasta.
+    -->
+
+    <!-- Dados para "partition" (gpt.bin) -->
+    <!-- Potential Partition Entry #400 at Offset 0x2CA14 (182804 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <program partition="partition" file_pattern="gpt.bin" label="partition" start_sector="12065712162769731584" num_partition_sectors="1810222320418941843"/>
+
+    <!-- Dados para "bootloader" (bootloader.img) -->
+    <!-- Potential Partition Entry #118 at Offset 0x1DB7E (121726 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <program partition="bootloader" file_pattern="bootloader.img" label="bootloader" start_sector="228590460" num_partition_sectors="16710789"/>
+
+    <!-- Dados para "vbmeta" (vbmeta.img) -->
+    <!-- Potential Partition Entry #131 at Offset 0x1DCFE (122110 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <program partition="vbmeta" file_pattern="vbmeta.img" label="vbmeta" start_sector="280263447" num_partition_sectors="951530"/>
+
+    <!-- Dados para "vbmeta_system" (vbmeta_system.img) -->
+    <!-- Potential Partition Entry #133 at Offset 0x1DD7E (122238 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <program partition="vbmeta_system" file_pattern="vbmeta_system.img" label="vbmeta_system" start_sector="281297620" num_partition_sectors="965933"/>
+
+    <!-- Dados para "radio" (radio.img) -->
+    <!-- Potential Partition Entry #142 at Offset 0x1DE7E (122494 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <program partition="radio" file_pattern="radio.img" label="radio" start_sector="2430617723" num_partition_sectors="6626916230"/>
+
+    <!-- Dados para "bluetooth" (BTFM.bin) -->
+    <!-- Potential Partition Entry #144 at Offset 0x1DEFE (122622 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <program partition="bluetooth" file_pattern="BTFM.bin" label="bluetooth" start_sector="9057614326" num_partition_sectors="16696843"/>
+
+    <!-- Dados para "dsp" (dspso.bin) -->
+    <!-- Potential Partition Entry #146 at Offset 0x1DF7E (122750 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <program partition="dsp" file_pattern="dspso.bin" label="dsp" start_sector="9074437508" num_partition_sectors="536781189"/>
+
+    <!-- Dados para "logo" (logo.bin) -->
+    <!-- Potential Partition Entry #151 at Offset 0x1DFFE (122878 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <program partition="logo" file_pattern="logo.bin" label="logo" start_sector="9611307800" num_partition_sectors="536745193"/>
+
+    <!-- Dados para "boot" (boot.img) -->
+    <!-- Potential Partition Entry #154 at Offset 0x1E07E (123006 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <program partition="boot" file_pattern="boot.img" label="boot" start_sector="10148124074" num_partition_sectors="1610541655"/>
+
+    <!-- Dados para "vendor_boot" (vendor_boot.img) -->
+    <!-- Potential Partition Entry #161 at Offset 0x1E17E (123262 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <program partition="vendor_boot" file_pattern="vendor_boot.img" label="vendor_boot" start_sector="11892960837" num_partition_sectors="1610535356"/>
+
+    <!-- Dados para "dtbo" (dtbo.img) -->
+    <!-- Potential Partition Entry #165 at Offset 0x1E1FE (123390 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <program partition="dtbo" file_pattern="dtbo.img" label="dtbo" start_sector="13503599307" num_partition_sectors="402550070"/>
+
+    <!-- Partições para apagar (Essenciais para um flash limpo, mas não para boot imediato) -->
+    <!-- Se você tem o arquivo .img correspondente para essas partições, pode usar a tag <program> em vez de <erase> -->
+
+    <!-- Dados para apagar "userdata" - Heurística: Offset 0x26595. Nome ilegível, mas comum para userdata. -->
+    <!-- Potential Partition Entry #396 at Offset 0x26595 (157077 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <erase partition="userdata" label="userdata" start_sector="7277943443630850048" num_partition_sectors="1080844119074435585"/>
+
+
+    <!-- Dados para apagar "metadata" - Heurística: Entrada com nome legível "metadata". -->
+    <!-- Potential Partition Entry #256 at Offset 0x25CFD (154877 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <erase partition="metadata" label="metadata" start_sector="184160082468" num_partition_sectors="68689339869"/>
+
+
+    <!-- Dados para apagar "carrier" - Heurística: Entrada com nome legível. -->
+    <!-- Potential Partition Entry #270 at Offset 0x25DFD (155133 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <erase partition="carrier" label="carrier" start_sector="287235212847" num_partition_sectors="67082811858"/>
+
+
+     <!-- Dados para apagar "ddr" - Heurística: Entrada com nome legível "ddr". -->
+    <!-- Potential Partition Entry #32 at Offset 0x557E (21886 bytes) -->
+    <!-- NOTA: Preencha start_sector e num_partition_sectors manualmente com os valores da varredura -->
+    <erase partition="ddr" label="ddr" start_sector="136369829" num_partition_sectors="16656732"/>
+
+    <!-- A partição "super" NÃO está incluída aqui porque não é essencial para chegar ao bootloader. -->
+    <!-- As outras partições essenciais para o bootloader que VOCÊ NÃO TEM o arquivo .img correspondente não estão incluídas aqui. -->
+
+    <!-- Etapas para sair do modo EDL e entrar no Bootloader -->
+    <step operation="oem" var="fb_mode_set"/>
+    <step filename="gpt.bin" operation="flash" partition="partition"/>
+    <step filename="bootloader.img" operation="flash" partition="bootloader"/>
+    <step filename="vbmeta.img" operation="flash" partition="vbmeta"/>
+    <step filename="vbmeta_system.img" operation="flash" partition="vbmeta_system"/>
+    <step filename="radio.img" operation="flash" partition="radio"/>
+    <step filename="BTFM.bin" operation="flash" partition="bluetooth"/>
+    <step filename="dspso.bin" operation="flash" partition="dsp"/>
+    <step filename="logo.bin" operation="flash" partition="logo"/>
+    <step filename="boot.img" operation="flash" partition="boot"/>
+    <step filename="vendor_boot.img" operation="flash" partition="vendor_boot"/>
+    <step filename="dtbo.img" operation="flash" partition="dtbo"/>
+
+    <!-- Etapas de apagar para partições de dados comuns (mesmo que não flasheadas nesta etapa) -->
+    <step operation="erase" partition="userdata"/>
+    <step operation="erase" partition="metadata"/>
+    <step operation="erase" partition="carrier"/>
+    <step operation="erase" partition="ddr"/>
+
+    <!-- Etapas finais para sair do EDL e entrar no Bootloader -->
+    <step operation="oem" var="fb_mode_clear"/>
+    <step operation="oem" var="config unset console"/>
+    <step operation="oem" var="config unset cmdl"/>
+</data>
